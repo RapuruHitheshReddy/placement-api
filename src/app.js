@@ -15,7 +15,10 @@ app.use("/bfhl", bfhlRoutes);
 
 // Default route for invalid paths
 app.use((req, res) => {
-  res.status(404).json({ is_success: false, message: "Route not found" });
+  res.status(404).json({
+    is_success: false,
+    message: "Invalid route. Please use the '/bfhl' endpoint with a POST request."
+  });
 });
 
 module.exports = app;
